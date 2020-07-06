@@ -10,13 +10,14 @@ import { mediaBalanceRouter } from "./router/mediaBalanceRouter.js";
 import { saldosCrescentesRouter } from "./router/saldosCrescentesRouter.js";
 import { saldosDecrescentesRouter } from "./router/saldosDecrescentesRouter.js";
 import { agenciaPrivateRouter } from "./router/agenciaPrivateRouter.js";
+import {} from "dotenv/config";
 
 mongooseConect();
 // conexão com mongodb
 async function mongooseConect() {
   try {
     await mongoose.connect(
-      "mongodb+srv://abner81:abner081@cluster-abner.euhog.gcp.mongodb.net/My-bank-api?retryWrites=true&w=majority",
+      `mongodb+srv://${process.env.USERDB}:${process.env.PWDDB}@cluster-abner.euhog.gcp.mongodb.net/My-bank-api?retryWrites=true&w=majority`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -43,4 +44,4 @@ app.use('/agenciaPrivate', agenciaPrivateRouter);
 
 
 
-app.listen(3000, () => console.log("API pronta"));
+app.listen(process.env.PORT, () => console.log("API pronta"));
