@@ -1,3 +1,4 @@
+//imports
 import express from "express";
 import mongoose from "mongoose";
 import { depositoRouter } from './router/depositoRouter.js'
@@ -11,7 +12,7 @@ import { saldosDecrescentesRouter } from "./router/saldosDecrescentesRouter.js";
 import { agenciaPrivateRouter } from "./router/agenciaPrivateRouter.js";
 
 mongooseConect();
-
+// conexão com mongodb
 async function mongooseConect() {
   try {
     await mongoose.connect(
