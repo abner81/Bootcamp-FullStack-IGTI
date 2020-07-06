@@ -10,7 +10,7 @@ import { mediaBalanceRouter } from "./router/mediaBalanceRouter.js";
 import { saldosCrescentesRouter } from "./router/saldosCrescentesRouter.js";
 import { saldosDecrescentesRouter } from "./router/saldosDecrescentesRouter.js";
 import { agenciaPrivateRouter } from "./router/agenciaPrivateRouter.js";
-import {} from "dotenv/config";
+import "dotenv/config";
 
 mongooseConect();
 // conexão com mongodb
